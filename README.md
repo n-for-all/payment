@@ -1,8 +1,8 @@
-# payment
+# Ajaxy Payment
 
 ```php
 //using paypal
-$host = __URL__;
+__URL__ = 'http://www.example.com';
 $paypal = new \Ajaxy\Payment\Gateway\Paypal(array(
     'email' => '',
     'custom' => array('user_id' => ''),
@@ -13,8 +13,10 @@ $paypal = new \Ajaxy\Payment\Gateway\Paypal(array(
 
 $paypal->addItem('test1', 10, 1);
 $paypal->addItem('test2', 10, 3);
-
+//print the form
 $paypal->getForm(true);
+
+//or echo the url
 echo '<a href="'.$paypal->getRequestUrl(false).'">Pay</a>';
 
 //using al mashreq bank
@@ -55,7 +57,7 @@ echo '<a href="'.$almashreq->getRequestUrl(false, true).'">Pay</a>';
 
 ```
 
-##validation
+## validation
 
 ```php
 
