@@ -1,5 +1,11 @@
 # Ajaxy Payment
 
+## Installation
+```bash
+composer require ajaxy/payment
+```
+
+## Examples
 ```php
 //using paypal
 __URL__ = 'http://www.example.com';
