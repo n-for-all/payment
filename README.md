@@ -22,7 +22,8 @@ echo '<a href="'.$paypal->getRequestUrl(false).'">Pay</a>';
 //using al mashreq bank
 __URL__ = "http://www.example.com";
 _SECURE_HASH_ = ''; //should be sent by the bank
-
+_MID_ = ''; //merchant id
+_ACCESS_CODE_ = ''; //access code
 
 $almashreq = new \Ajaxy\Payment\Gateway\AlMashreq(array(
 
@@ -42,8 +43,8 @@ $almashreq = new \Ajaxy\Payment\Gateway\AlMashreq(array(
 
     //merchant details, those details are sent by the bank
     'endpoint' => 'https://migs.mastercard.com.au',
-    'access_code' => '',
-    'merchant' => '',
+    'access_code' => _ACCESS_CODE_,
+    'merchant' => _MID_,
     'currency_code' => 'AED',
     'secure_hash' => _SECURE_HASH_,
 
@@ -93,3 +94,21 @@ $response = new \Ajaxy\Payment\Gateway\AlMashreq\Response(_SECURE_HASH_, null, $
 
 
 ```
+
+## About
+
+### Requirements
+
+- Ajaxy\Logger works with PHP 5.6 or above.
+
+### Submitting bugs and feature requests
+
+Bugs and feature request are tracked on [GitHub](https://github.com/n-for-all/payment/issues)
+
+### Author
+
+Naji Amer - <icu090@gmail.com> - <http://ajaxy.org><br />
+
+### License
+
+Ajaxy\Payment is licensed under the MIT License - see the `LICENSE` file for details
