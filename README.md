@@ -8,13 +8,13 @@ composer require ajaxy/payment
 ## Examples
 ```php
 //using paypal
-__URL__ = 'http://www.example.com';
+$__URL__ = 'http://www.example.com';
 $paypal = new \Ajaxy\Payment\Gateway\Paypal(array(
     'email' => '',
     'custom' => array('user_id' => ''),
-    'notify_url' => __URL__.'/validate_ipn.php',
-    'return_url' => __URL__,
-    'cancel_return' => __URL__
+    'notify_url' => $__URL__.'/validate_ipn.php',
+    'return_url' => $__URL__,
+    'cancel_return' => $__URL__
 ));
 
 $paypal->addItem('test1', 10, 1);
@@ -26,15 +26,15 @@ $paypal->getForm(true);
 echo '<a href="'.$paypal->getRequestUrl(false).'">Pay</a>';
 
 //using al mashreq bank
-__URL__ = "http://www.example.com";
-_SECURE_HASH_ = ''; //should be sent by the bank
-_MID_ = ''; //merchant id
-_ACCESS_CODE_ = ''; //access code
+$__URL__ = "http://www.example.com";
+$_SECURE_HASH_ = ''; //should be sent by the bank
+$_MID_ = ''; //merchant id
+$_ACCESS_CODE_ = ''; //access code
 
 $almashreq = new \Ajaxy\Payment\Gateway\AlMashreq(array(
 
-    'notify_url' => __URL__.'/validate_mh.php',
-    'return_url' => __URL__.'/validate_mh.php',
+    'notify_url' => $__URL__.'/validate_mh.php',
+    'return_url' => $__URL__.'/validate_mh.php',
 
     'order_number' => __ORDER__NO__,
 
@@ -49,10 +49,10 @@ $almashreq = new \Ajaxy\Payment\Gateway\AlMashreq(array(
 
     //merchant details, those details are sent by the bank
     'endpoint' => 'https://migs.mastercard.com.au',
-    'access_code' => _ACCESS_CODE_,
-    'merchant' => _MID_,
+    'access_code' => $_ACCESS_CODE_,
+    'merchant' => $_MID_,
     'currency_code' => 'AED',
-    'secure_hash' => _SECURE_HASH_,
+    'secure_hash' => $_SECURE_HASH_,
 
 ));
 
