@@ -1,0 +1,33 @@
+{
+    "name": "ajaxy/payment",
+    "type": "ajaxy",
+    "description": "Ajaxy Payment",
+    "keywords": [],
+    "homepage": "https://ajaxy.org",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Naji Amer",
+            "email": "contact@ajaxy.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+    },
+    "conflict": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Ajaxy\\Payment\\": "/src",
+            "Ajaxy\\Payment\\Gateway\\": "/src/Gateway",
+            "Ajaxy\\Payment\\Gateway\\Paypal\\": "/src/Gateway/Paypal",
+            "Ajaxy\\Payment\\Gateway\\AlMashreq\\": "/src/Gateway/AlMashreq"
+        },
+        "exclude-from-classmap": [
+            "/tests/"
+        ]
+    },
+    "minimum-stability": "stable"
+}
