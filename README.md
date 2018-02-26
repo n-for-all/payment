@@ -58,10 +58,11 @@ echo '<a href="'.$almashreq->getRequestUrl(false, true).'">Pay</a>';
 
 ```
 
-## validation
+## Validation
 
 ```php
 
+//you will receive the response at the return_url you have set before
 //al mashreq
 $response = new \Ajaxy\Payment\Gateway\AlMashreq\Response(_SECURE_HASH_, null);
 if($response->validate()){
